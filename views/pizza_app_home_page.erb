@@ -1,0 +1,35 @@
+<div class="box_div">
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/layout.css">
+	<script src="/js/form.js"></script>
+</head>
+<body>
+<h1> Mike's Pizza App </h1>
+<form method = "post" action = "pizza_app_home_page">
+<hr>
+<h3> Welcome! Please customize your pizza by selecting the choices below. </h3>
+<br><br>
+<h1>Sizes</h1>
+<label class="container">Small
+  <input type="checkbox">
+  <id = "checkboxSmall">
+  <onclick = "checkboxSizes()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Medium
+  <input type="checkbox">
+   <id = "checkboxMedium">
+  <onclick = "checkboxSizes()">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Large
+  <input type="checkbox">
+   <id = "checkboxLarge">
+  <onclick = "checkboxSizes()">
+  <span class="checkmark"></span>
+</label>
+<br><br>
+<input class = "button" type = "submit" value = "Next" onclick>
+</form>
+</body>
+</div>

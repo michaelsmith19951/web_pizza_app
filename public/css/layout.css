@@ -1,21 +1,21 @@
 body {
 	text-align: center;
 	background-image: url("/images/background.jpg");
-	color: #111642; /* Dark Blue*/
+	color: #e0430f; /* Reddish Orange*/
 	background-size: cover;
 	font-weight: bold;
 }
 
 
 .button {
-	background-color: #23a896; /* Light Blue*/
+	background-color: #d2e812; /* Yellow*/
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 19px;
 }
 
 .button:hover {
@@ -23,7 +23,7 @@ body {
 }
 
 	.button:active{
-		background-color: #6016f4;	/* Purple*/
+		background-color: #d3cd10;	/* Yellow*/
 		transform: translate(4px);
 	}
 .box_div {
@@ -31,9 +31,22 @@ body {
 	text-align: center;
 	align-items: center;
 	background-color: lightgrey;
-	width: 990px;
+	width: 500px;
 	border: 25px solid red;
 	padding: 120px;
 	margin: 25px;
 	height: 400px;
+}
+
+#container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background: yellow;
+}
+#animate {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: red;
 }

@@ -86,5 +86,11 @@ get '/pizza_app_confirmation_page' do
 	erb :pizza_app_confirmation_page, locals:{meats: meats, meats_price: meats_price, doop: params[:thingy1], actual_price: [:actual_price], doop_cheese: params[:thingy2], doop_veggies: params[:thingy3], doop_sauce: params[:thingy4], doop_size: params[:thingy5], doop_crusts: params[:thingy6]}
 end
 post '/pizza_app_confirmation_page' do
+	redirect '/pizza_app_final_page'
+end
+get '/pizza_app_final_page' do
+	erb :pizza_app_final_page, locals:{meats: meats, meats_price: meats_price, doop: params[:thingy1], actual_price: [:actual_price], doop_cheese: params[:thingy2], doop_veggies: params[:thingy3], doop_sauce: params[:thingy4], doop_size: params[:thingy5], doop_crusts: params[:thingy6]}
+end
+post '/pizza_app_final_page' do
 
 end

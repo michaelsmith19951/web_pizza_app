@@ -2,35 +2,33 @@ require "sinatra"
 
 def meats()   
  meats = ["pepperoni", "sausage", "ham", "bacon", "chicken", "beef-wellington"]
- meats[0..5]
 end
 def meats_price()
     [0.25, 0.50, 0.35, 0.80, 1.00, 0.99  ]
 end
 def cheese()
     cheese = ["pepperjack", "colbyjack", "parmesan", "mozzerella", "blue cheese", "nacho"]
-    cheese[0..5]
 end
 def cheese_price()
     cheese = [1.00, 0.75, 1.00, 2.94, 1.23, 2.54]
 end
 def vegetables()
     vegetables = ["onion", "bell pepper", "jalapenos", "habenero", "banana peppers", "olives",]
-    vegetables[0..5]
+end
+def crusts()
+    crusts = ["stuffed crust", "thin crust", "thick crust"]
 end
 def vegetables_price()
     vegetables = [0.50, 1.00, 2.00, 3.00, 2.00, 1.00]
 end
 def sauce()
     sauce = ["tomato sauce", "white sauce", "ranch", "mayo"]
-    sauce[0..3]
 end
 def sauce_price()
     sauce = [1.00, 0.50, 2.00, 0.15]
 end
 def sizes()
     sizes = ["5 inch", "10 inch", "15 inch"]
-    sizes[0..2]
 end 
 def size_price
     sizes = [10.00, 32.00, 65.25]

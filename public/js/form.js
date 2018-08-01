@@ -1,27 +1,27 @@
-function checkboxSizes(){
+function radioSizes(){
 	  // Get the checkbox
-  var checkboxSmall = document.getElementById("checkboxSmall");
+  var radioSmall = document.getElementById("radioSmall");
   // Get the output text
   var text = document.getElementById("text");
     // Get the checkbox
-  var checkboxMedium = document.getElementById("checkboxMedium");
+  var radioMedium = document.getElementById("radioMedium");
   // Get the output text
   var text = document.getElementById("text");
   // Get the checkbox
-  var checkboxLarge = document.getElementById("checkboxLarge");
+  var radioLarge = document.getElementById("radioLarge");
   // Get the output text
   var text = document.getElementById("text");
-   if (checkboxSmall.checked == true){
+   if (radioSmall.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
     }  
-	if (checkboxMedium.checked == true){
+	if (radioMedium.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
     }  
-    if (checkboxLarge.checked == true){
+    if (radioLarge.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
@@ -30,32 +30,96 @@ function checkboxSizes(){
 
 function checkboxToppings(){
 	  // Get the checkbox
-  var checkboxMeats = document.getElementById("checkboxMeatstoppings");
+  var checkboxPepperoni = document.getElementById("checkboxPepperonitoppings");
   // Get the output text
   var text = document.getElementById("text");
     // Get the checkbox
-  var checkboxVegetables = document.getElementById("checkboxVegetablestoppings");
+  var checkboxSausage = document.getElementById("checkboxSausagetoppings");
   // Get the output text
   var text = document.getElementById("text");
   // Get the checkbox
-  var checkboxCheeses = document.getElementById("checkboxCheesestoppings");
+  var checkboxHam = document.getElementById("checkboxHamtoppings");
   // Get the output text
   var text = document.getElementById("text");
-  if (checkboxMeats.checked == true){
+  var checkboxBacon = document.getElementById("checkboxBacontoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxBellpepper = document.getElementById("checkboxBellpeppertoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxJalapenos = document.getElementById("checkboxJalapenostoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxBananapeppers = document.getElementById("checkboxBananapepperstoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxPepperjack = document.getElementById("checkboxPepperjacktoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxColbyjack = document.getElementById("checkboxColbyjacktoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxParmesan = document.getElementById("checkboxParmesantoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  var checkboxMozzerella = document.getElementById("checkboxMozzerellatoppings");
+  // Get the output text
+  var text = document.getElementById("text");
+  if (checkboxPepperoni.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
     }  
-   if (checkboxVegetables.checked == true){
+   if (checkboxSausage.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
     }  
-    if (checkboxCheeses.checked == true){
+    if (checkboxHam.checked == true){
         text.style.display = "block";
     } else {
        text.style.display = "none";
     }  
+    if (checkboxBacon.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxBellpepper.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxJalapenos.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxBananapeppers.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxPepperjack.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxColbyjack.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxParmesan.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
+    if (checkboxMozzerella.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    } 
 }
 
 function checkboxSauces(){
@@ -105,4 +169,52 @@ function checkCookies() {
     }
     document.getElementById("demo").innerHTML = text;
 }
-
+function checkboxCrusts(){
+    // Get the checkbox
+  var checkboxStuffedcrust = document.getElementById("checkboxStuffed");
+  // Get the output text
+  var text = document.getElementById("text");
+    // Get the checkbox
+  var checkboxThincrust = document.getElementById("checkboxThin");
+  // Get the output text
+  var text = document.getElementById("text");
+  // Get the checkbox
+  var checkboxThickcrust = document.getElementById("checkboxThick");
+  // Get the output text
+  var text = document.getElementById("text");
+  if (checkboxStuffedcrust.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }  
+   if (checkboxThincrust.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }  
+    if (checkboxThickcrust.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }  
+}
+function radioDelivery(){
+    // Get the checkbox
+  var radioYes = document.getElementById("radioYes");
+  // Get the output text
+  var text = document.getElementById("text");
+    // Get the checkbox
+  var radioNo = document.getElementById("radioNo");
+  // Get the output text
+  var text = document.getElementById("text");
+   if (radioYes.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }  
+  if (radioNo.checked == true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }   
+}

@@ -10,10 +10,17 @@
 <h1> Mike's Pizza App </h1>
 <form method = "post" action = "pizza_app_confirmation_page">
 <hr>
-<h3> Here is a summary of your order. Please click the back button on your web browser if you want to make any changes. Otherwise, please click the Place Order button below to place your order. </h3>
+<h3> Here is a summary of your order. Please click the back button on your web browser if you want to make any changes. Otherwise, please click the Place Order button below to place your order. If you want the pizza to be delivered, then please enter your address below after answering yes or no.</h3>
+<br><br>
+<h3>Would you like your pizza to be delivered?</h3>
+<input type="radio" name="delivery" value="radioYes" required>Yes<br>
+<input type="radio" name="delivery" value="radioNo">No<br>
+<br>
+<input type = "text" name = "address" onclick = 'radioDelivery()'></input>
 <br><br>
 <input class = "button" type = "submit" value = "Place Order" onclick>
 <!-- PLACEHOLDER -->
+<h3> <%=doop_size%> pizza with <%=doop_crusts%>, <%=meats%>, <%=doop_cheese%>, <%=doop_veggies%> and <%=doop_sauce%>. </h3>
 </form>
 </body>
 </div>

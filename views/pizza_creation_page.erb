@@ -16,72 +16,61 @@
 <label class="container">Pepperoni
   <input type="checkbox">
    <id = "checkboxPepperonitoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Sausage
   <input type="checkbox">
   <id = "checkboxSausagetoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Ham
   <input type="checkbox">
   <id = "checkboxHamtoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Bacon
   <input type="checkbox">
   <id = "checkboxBacontoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Bell Peppers
   <input type="checkbox">
   <id = "checkboxBellpeppertoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Jalapenos
   <input type="checkbox">
   <id = "checkboxJalapenostoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Banana Peppers
   <input type="checkbox">
   <id = "checkboxBananapepperstoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Pepper Jack
   <input type="checkbox">
   <id = "checkboxPepperjacktoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Colby Jack
   <input type="checkbox">
   <id = "checkboxColbyjacktoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Parmesan
   <input type="checkbox">
   <id = "checkboxParmesantoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Mozzerella
   <input type="checkbox">
   <id = "checkboxMozzerellatoppings">
-  <onclick = "checkboxToppings()">
   <span class="checkmark"></span>
 </label>
 <br><br>
 <h1>Sizes</h1>
-<input type="radio" name="sizes" value="radioSmall">Small<br>
+<input type="radio" name="sizes" value="radioSmall" required>Small<br>
 <input type="radio" name="sizes" value="radioMedium">Medium<br>
 <input type="radio" name="sizes" value="radioLarge">Large<br>
 <br><br>
@@ -89,25 +78,21 @@
 <label class="container">Tomato Sauce
   <input type="checkbox">
    <id = "checkboxTomatosauce">
-  <onclick = "checkboxSauces()">
   <span class="checkmark"></span>
 </label>
 <label class="container">White Sauce
   <input type="checkbox">
    <id = "checkboxWhitesauce">
-  <onclick = "checkboxSauces()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Ranch
   <input type="checkbox">
    <id = "checkboxRanchsauce">
-  <onclick = "checkboxSauces()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Mayo
   <input type="checkbox">
    <id = "checkboxMayosauce">
-  <onclick = "checkboxSauces()">
   <span class="checkmark"></span>
 </label>
 <br><br>
@@ -115,30 +100,20 @@
 <label class="container">Stuffed Crust
   <input type="checkbox">
    <id = "checkboxStuffedcrust">
-  <onclick = "checkboxCrusts()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Thin Crust
   <input type="checkbox">
    <id = "checkboxThincrust">
-  <onclick = "checkboxCrusts()">
   <span class="checkmark"></span>
 </label>
 <label class="container">Thick Crust
   <input type="checkbox">
    <id = "checkboxThickcrust">
-  <onclick = "checkboxCrusts()">
   <span class="checkmark"></span>
 </label>
 <br><br>
-<!-- <h3>Would you like your pizza to be delivered?</h3>
-<input type="radio" name="delivery" value="radioYes">Yes<br>
-<input type="radio" name="delivery" value="radioNo">No<br>
-<br>
-<h3> Please enter your address below, if you would like your pizza to be delivered.</h3>
-<input type = "text" name = "address" required> -->
-<br><br>
-<input class = "button" type = "submit" value = "Next" onclick>
+<button class = "button" onclick = 'valThis()'>Next</button>
 </form>
 </body>
 </div>

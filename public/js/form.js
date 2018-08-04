@@ -199,36 +199,25 @@ function checkCookies() {
 //     }  
 // }
 function radioDelivery(){
-    // Get the checkbox
-  var radioYes = document.getElementById("radioYes");
-  // Get the output text
-  var yesText = document.getElementById("yesText");
-    // Get the checkbox
-  var radioNo = document.getElementById("radioNo");
-  // Get the output text
-  var noText = document.getElementById("noText");
-   if (radioYes.checked == true){
-        yesText.style.display = "block";
-    } else {
-       yesText.style.display = "none";
-    }  
-  if (radioNo.checked == true){
-        noText.style.display = "block";
-    } else {
-       noText.style.display = "none";
-    }   
-}
-function valThis() {
-var checkBoxes = document.getElementsByClassName('container');
-var isChecked = false;
-    for (var i = 0; i < checkBoxes.length; i++) {
-        if ( checkBoxes[i].checked ) {
-            isChecked = true;
-        }
+    if (document.getElementById("radioYes").checked){
+      document.getElementById("address").style.display = 'block';
+    }   else if (document.getElementById("radioNo").checked) {
+      document.getElementById("address").style.display = 'none'
     }
-    if ( isChecked ) {
-      
-        } else {
-            alert( 'Please, check at least one checkbox!' );
-        }   
+    else 
+        document.getElementById("address").style.display = 'none';
 }
+// function valThis() {
+// var checkBoxes = document.getElementsByClassName("container");
+// var isChecked = false;
+//     for (var i = 0; i < checkBoxes.length; i++) {
+//         if ( checkBoxes[i].checked ) {
+//             isChecked = true;
+//         }
+//     }
+//     if ( isChecked ) {
+
+//         } else {
+//             alert( 'Please check at least one checkbox!' );
+//         }   
+// }

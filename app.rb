@@ -11,9 +11,9 @@ end
 
 get '/pizza_creation_page' do
 	sizes = params[:sizes]
-	meat_toppings = params[:meat_toppings]
-	vegetable_toppings = params[:vegetable_toppings]
-	cheese_toppings = params[:cheese_toppings]
+	meat_toppings = params[:meat_toppings].to_s
+	vegetable_toppings = params[:vegetable_toppings].to_s
+	cheese_toppings = params[:cheese_toppings].to_s
 	sauces = params[:sauces]
 	crusts = params[:crusts]
 	p "test that #{params} in pizza creation page are params"
@@ -33,15 +33,25 @@ get '/pizza_app_confirmation_page' do
     p "test that #{sizes} is on pizza confirmation page"
     p "test that #{crusts} is on pizza confirmation page"
     p "test that #{address} is on pizza confirmation page"
-	erb :pizza_app_confirmation_page, locals:{sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts}
+	erb :pizza_app_confirmation_page, locals:{sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts, address: address}
 end
 post '/pizza_app_confirmation_page' do
 	redirect '/pizza_app_final_page'
 end
 get '/pizza_app_final_page' do
 	p "params in total on final page are #{params}"
-	total = final_total(params[:sizes], params[:meat_toppings], params[:vegetable_toppings], params[:cheese_toppings], params[:sauces], params[:crusts])
-	erb :pizza_app_final_page, locals:{total: total, address: address, sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts}
+	total = pizzaria(params[:sizes], params[:meat_toppings], params[:vegetable_toppings], params[:cheese_toppings], params[:sauces], params[:crusts])
+	address = params[:address]
+	# pizza_size = total.values[1]
+	# pizza_crust = total.values[2]
+	# pizza_sauce = total.values[3]
+	# pizza_meat_toppings = total.values[4]
+	# pizza_vegetable_toppings = total.values[5]
+	# pizza_cheese_toppings = total.values[6]
+	# pizza_address = total.values[7]
+	# session[:pizza_total] = total.values[8]
+	pizza_total = session[:pizza_total]
+	erb :pizza_app_final_page, locals:{total: total, address: address, sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts, pizza_total: pizza_total}
 end
 	post '/pizza_app_final_page' do
 end

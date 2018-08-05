@@ -36,25 +36,45 @@ end
 def cls
     system ('cls')
 end
-def pizzaria()
+def pizzaria(sizes, meat_toppings, vegetable_toppings, cheese_toppings, sauces, crusts)
     cls
-    puts "to choose what you want,enter the assigned number"
-    puts "what meat toppings do you want on your pizza?"; print "#{meats()} : "; p_meats = $stdin.gets.chomp.to_i; cls
-    puts "what kind of cheese do you want on your pizza?"; print "#{cheese()} : "; p_cheese = $stdin.gets.chomp.to_i; cls
-    puts "what kind of veggies do you want on your pizza?"; print "#{veggies()} : "; p_vegetables = $stdin.gets.chomp.to_i; cls
-    puts "what kind of sauce do you want on your pizza?"; print "#{sauce()} : "; p_sauce = $stdin.gets.chomp.to_i; cls
-    puts "what size would you like your pizza to be?"; print "#{size()} : "; p_sizes = $stdin.gets.chomp.to_i; cls
+    # puts "to choose what you want,enter the assigned number"
+    # puts "what meat toppings do you want on your pizza?"; print "#{meat_toppings()} : " 
+    p_meats = $stdin.to_i; cls
+    # # puts "what kind of cheese do you want on your pizza?"; print "#{cheese_toppings()} : " 
+    p_cheese = $stdin.to_i; cls
+    # # puts "what kind of veggies do you want on your pizza?"; print "#{vegetable_toppings()} : "
+     p_vegetables = $stdin.to_i; cls
+    # # puts "what kind of sauce do you want on your pizza?"; print "#{sauces()} : " 
+    p_sauce = $stdin.to_i; cls
+    # # puts "what size would you like your pizza to be?"; print "#{sizes()} : " 
+    p_sizes = $stdin.to_i; cls
+    final_hash = {}
+    total_arr = []
+    #p "subtotal_arr in total_arr is #{subtotal_arr}"
+    p "in final_total total_arr is #{total_arr} class is #{total_arr.class}"
+    total = total_arr.flatten.sum
+    final_hash["sizes"] = sizes
+    final_hash["crusts"] = crusts
+    final_hash["meat_toppings"] = meat_toppings
+    final_hash["vegetable_toppings"] = vegetable_toppings
+    final_hash["cheese_toppings"] = cheese_toppings
+    final_hash["sauces"] = sauces
+    final_hash["crusts"] = crusts
+    final_hash["total"] = total
+    final_hash
     price = 0
-    puts "do you wnat it delivered y/n?"
-        answer = gets.chomp
-    if answer == "y" ; puts " how many miles away is the foods destination?"; miles = gets.chomp.to_i; cls
-         if miles >= 50 
-             (price + 5) + (0.40 * miles) 
-         else; price + 5
-         end
-     end
-     total = price * 1.16; puts "that will be $#{total.round(2)}, after tax."
+    # puts "do you wnat it delivered y/n?"
+    #     answer = gets.chomp
+    # if answer == "y" ; puts " how many miles away is the foods destination?"; miles = gets.chomp.to_i; cls
+    #      if miles >= 50 
+    #          (price + 5) + (0.40 * miles) 
+    #      else; price + 5
+    #      end
+    #  end
+     total = price * 1.16 
+     # puts "that will be $#{total.round(2)}, after tax."
     price += meats_price[p_meats - 1] + cheese_price[p_cheese - 1] + vegetables_price[p_vegetables - 1] + sauce_price[p_sauce - 1] + size_price[p_sizes - 1]
-    puts "enjoy your #{size[p_size - 1]}, #{meats[p_meats - 1]}, #{cheese[p_cheese - 1]}, #{veggies[p_veggies - 1]}, #{sauce[p_sauce - 1]} pizza"; puts "enjoy your side of #{sides}"
+    # puts "enjoy your #{size[p_size - 1]}, #{meats[p_meats - 1]}, #{cheese[p_cheese - 1]}, #{veggies[p_veggies - 1]}, #{sauce[p_sauce - 1]} pizza"; puts "enjoy your side of #{sides}"
 end
 # pizzaria()

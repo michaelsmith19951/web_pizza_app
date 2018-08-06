@@ -13,59 +13,64 @@
 <h3> Please customize your pizza by choosing the options below. </h3>
 <br><br>
 <h1>Toppings</h1>
-<label class="container">Pepperoni
+<label>Pepperoni
   <input type="checkbox">
    <id = "checkboxPepperonitoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Sausage
+<label>Sausage
   <input type="checkbox">
   <id = "checkboxSausagetoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Ham
+<label>Ham
   <input type="checkbox">
   <id = "checkboxHamtoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Bacon
+<label>Bacon
   <input type="checkbox">
   <id = "checkboxBacontoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Bell Peppers
+<label>Bell Peppers
   <input type="checkbox">
   <id = "checkboxBellpeppertoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Jalapenos
+<label>Jalapenos
   <input type="checkbox">
   <id = "checkboxJalapenostoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Banana Peppers
+<label>Banana Peppers
   <input type="checkbox">
   <id = "checkboxBananapepperstoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Pepper Jack
+<label>Pepper Jack
   <input type="checkbox">
   <id = "checkboxPepperjacktoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Colby Jack
+<label>Colby Jack
   <input type="checkbox">
   <id = "checkboxColbyjacktoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Parmesan
+<label>Parmesan
   <input type="checkbox">
   <id = "checkboxParmesantoppings">
   <span class="checkmark"></span>
 </label>
-<label class="container">Mozzerella
+<label>Mozzerella
   <input type="checkbox">
   <id = "checkboxMozzerellatoppings">
+  <span class="checkmark"></span>
+</label>
+<label>Invisible Box
+  <input type="checkbox" hidden checked>
+  <id = "checkboxInvisible">
   <span class="checkmark"></span>
 </label>
 <br><br>
@@ -75,43 +80,15 @@
 <input type="radio" name="sizes" value="radioLarge">Large<br>
 <br><br>
 <h1>Sauces</h1>
-<label class="container">Tomato Sauce
-  <input type="checkbox">
-   <id = "checkboxTomatosauce">
-  <span class="checkmark"></span>
-</label>
-<label class="container">White Sauce
-  <input type="checkbox">
-   <id = "checkboxWhitesauce">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Ranch
-  <input type="checkbox">
-   <id = "checkboxRanchsauce">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Mayo
-  <input type="checkbox">
-   <id = "checkboxMayosauce">
-  <span class="checkmark"></span>
-</label>
+<input type="radio" name="sauces" value="tomatoSauce" required>Tomato Sauce<br>
+<input type="radio" name="sauces" value="whiteSauce">White Sauce<br>
+<input type="radio" name="sauces" value="ranchSauce">Ranch<br>
+<input type="radio" name="sauces" value="mayoSauce">Mayo<br>
 <br><br>
 <h1>Crusts</h1>
-<label class="container">Stuffed Crust
-  <input type="checkbox">
-   <id = "checkboxStuffedcrust">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Thin Crust
-  <input type="checkbox">
-   <id = "checkboxThincrust">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Thick Crust
-  <input type="checkbox">
-   <id = "checkboxThickcrust">
-  <span class="checkmark"></span>
-</label>
+<input type="radio" name="crusts" value="stuffedCrust" required>Stuffed Crust<br>
+<input type="radio" name="crusts" value="thinCrust">Thin Crust<br>
+<input type="radio" name="crusts" value="thickCrust">Thick Crust<br>
 <br><br>
 <button class = "button" onclick = 'valThis()'>Next</button>
 </form>

@@ -10,21 +10,76 @@
 <h1> Mike's Pizza App </h1>
 <form method = "post" action = "pizza_app_confirmation_page">
 <hr>
-<h3> Here is a summary of your order. Please click the back button on your web browser if you want to make any changes. Otherwise, please click the Place Order button below to place your order. If you want the pizza to be delivered, then please enter your address below after answering yes or no.</h3>
+<h3> Here is a summary of your order. Please choose no below if you want to make any changes. Otherwise, please click the Place Order button below to place your order, after reviewing your order. If you want the pizza to be delivered, then please enter your address below after answering yes or no.</h3>
 <br><br>
+<div class="confirm_size">
+			<%= p_size.capitalize %><br>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_size" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_size" value="no">
+	</div>
+
+	<br>
+	<div class="confirm_crust">
+			<%= p_crust.capitalize %><br>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_crust" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_crust" value="no">
+	</div>
+
+	<br>
+
+	<div class="confirm_topping">
+			<% p_toppings.each do |top| %>
+				<%= top.capitalize %>
+				<% if top == "pepperoni"%>
+				<!-- <img src=/images/toppings/pepperoni.png> -->
+				<% elsif top == "sausage"%>
+				<!-- <img src=/images/toppings/sausage.png> -->
+				<% elsif top == "ham"%>
+				<!-- <img src=/images/toppings/ham.png> -->
+				<% elsif top == "bacon"%>
+				<!-- <img src=/images/toppings/mybacon.png> -->
+				<% elsif top == "bell peppers"%>
+				<!-- <img src=/images/toppings/green-peppers.png> -->
+				<% elsif top == "banana peppers"%>
+				<!-- <img src=/images/toppings/nanpep.png> -->
+				<% elsif top == "jalapenos"%>
+				<!-- <img src=/images/toppings/mush.png> -->
+				<% elsif top == "pepperjack"%>
+				<!-- <img src=/images/toppings/pizza_designer_olives.png> -->
+				<% elsif top == "onions"%>
+				<!-- <img src=/images/toppings/onions.png> -->
+				<% elsif top == "colbyjack"%>
+			<!-- 	<img src=/images/toppings/pinap.png> -->
+				<% elsif top == "parmesan"%>
+				<!-- <img src=/images/toppings/cheese.png> -->
+				<% elsif top == "mozzerella"%>
+				<!-- <img src=/images/toppings/cheese.png> -->
+				<% elsif top == "extracheese"%>
+			<%end%>
+		<%end%><br>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_topping" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_topping" value="no">
+	</div>
 <h3>Would you like your pizza to be delivered?</h3>
 <div class = "delivery_buttons">
 <input type="radio" id = "radioYes" name="delivery" value="radioYes" onchange = 'radioDelivery()' required>Yes<br>
 <input type="radio" name="delivery" id = "radioNo" onchange = 'radioDelivery()'	value="radioNo">No<br>
+<br>
+<center>
+<input type="text" id="address" name = "confirm_address" placeholder="Insert address" style = "display: none">
+</center>
 </div>
 <br>
 <center>
-<input hidden type = "text" id = "address" name = "address"> </input>
-</center>
 <br><br>
 <input class = "button" type = "submit" value = "Place Order" onclick>
 <!-- PLACEHOLDER -->
-<h3> <%=sizes%> pizza with <%=crusts%>, <%=meat_toppings%>, <%=cheese_toppings%>, <%=vegetable_toppings%> and <%=sauces%>. </h3>
 </form>
 </body>
 </div>

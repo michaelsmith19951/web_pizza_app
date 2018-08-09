@@ -13,84 +13,90 @@
 <h3> Please customize your pizza by choosing the options below. </h3>
 <br><br>
 <h1>Toppings</h1>
+<hr>
+<div class = "toppings_class">
 <label>Pepperoni
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="pepperoni">
    <id = "checkboxPepperonitoppings">
   <span class="checkmark"></span>
 </label>
 <label>Sausage
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="sausage">
   <id = "checkboxSausagetoppings">
   <span class="checkmark"></span>
 </label>
 <label>Ham
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="ham">
   <id = "checkboxHamtoppings">
   <span class="checkmark"></span>
 </label>
 <label>Bacon
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="bacon">
   <id = "checkboxBacontoppings">
   <span class="checkmark"></span>
 </label>
 <label>Bell Peppers
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="bell peppers">
   <id = "checkboxBellpeppertoppings">
   <span class="checkmark"></span>
 </label>
 <label>Jalapenos
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="jalapenos">
   <id = "checkboxJalapenostoppings">
   <span class="checkmark"></span>
 </label>
 <label>Banana Peppers
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="banana peppers">
   <id = "checkboxBananapepperstoppings">
   <span class="checkmark"></span>
 </label>
 <label>Pepper Jack
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="pepperjack">
   <id = "checkboxPepperjacktoppings">
   <span class="checkmark"></span>
 </label>
 <label>Colby Jack
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="colbyjack">
   <id = "checkboxColbyjacktoppings">
   <span class="checkmark"></span>
 </label>
 <label>Parmesan
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="parmesan">
   <id = "checkboxParmesantoppings">
   <span class="checkmark"></span>
 </label>
 <label>Mozzerella
-  <input type="checkbox">
+  <input type="checkbox" name = "toppings[]" value="mozzerella">
   <id = "checkboxMozzerellatoppings">
   <span class="checkmark"></span>
 </label>
-<label>Invisible Box
-  <input type="checkbox" hidden checked>
-  <id = "checkboxInvisible">
+<label>Extra Cheese
+  <input type="checkbox" name = "toppings[]" value = "extracheese">
+  <id = "checkboxExtratoppings">
   <span class="checkmark"></span>
 </label>
+</div>
 <br><br>
 <h1>Sizes</h1>
-<input type="radio" name="sizes" value="radioSmall" required>Small<br>
-<input type="radio" name="sizes" value="radioMedium">Medium<br>
-<input type="radio" name="sizes" value="radioLarge">Large<br>
+<hr>
+<input type="radio" name="pizza_size" value="small" required>Small<br>
+<input type="radio" name="pizza_size" value="medium">Medium<br>
+<input type="radio" name="pizza_size" value="large">Large<br>
 <br><br>
 <h1>Sauces</h1>
-<input type="radio" name="sauces" value="tomatoSauce" required>Tomato Sauce<br>
-<input type="radio" name="sauces" value="whiteSauce">White Sauce<br>
-<input type="radio" name="sauces" value="ranchSauce">Ranch<br>
-<input type="radio" name="sauces" value="mayoSauce">Mayo<br>
+<hr>
+<input type="radio" name="pizza_sauces" value="tomato sauce" required>Tomato Sauce<br>
+<input type="radio" name="pizza_sauces" value="white sauce">White Sauce<br>
+<input type="radio" name="pizza_sauces" value="ranch">Ranch<br>
+<input type="radio" name="pizza_sauces" value="mayo">Mayo<br>
 <br><br>
 <h1>Crusts</h1>
-<input type="radio" name="crusts" value="stuffedCrust" required>Stuffed Crust<br>
-<input type="radio" name="crusts" value="thinCrust">Thin Crust<br>
-<input type="radio" name="crusts" value="thickCrust">Thick Crust<br>
+<hr>
+<input type="radio" name="pizza_crust" value="stuffed crust" required>Stuffed Crust<br>
+<input type="radio" name="pizza_crust" value="thin crust">Thin Crust<br>
+<input type="radio" name="pizza_crust" value="thick crust">Thick Crust<br>
 <br><br>
-<button class = "button" onclick = 'valThis()'>Next</button>
+<button class = "button" onclick = 'val()'>Next</button>
 </form>
 </body>
 </div>

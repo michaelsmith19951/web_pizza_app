@@ -6,52 +6,95 @@ get '/' do
 end
 
 post '/pizza_app_home_page' do
+	pizza_crust = params[:pizza_crust]
+	pizza_sauces = params[:pizza_sauces]
+	pizza_size = params[:pizza_size]
+	toppings2 = params[:toppings].to_s
+	# session[:pizza_crust] = params[:pizza_crust]
+	# session[:pizza_sauces] = params[:pizza_sauces]	
+	# session[:pizza_size] = params[:pizza_size]
+	# session[:pizza_toppings] = params[:pizza_toppings].to_s
+	# session[:address] = params[:address]
+	p "test that crusts in home page are #{pizza_crust}"
+	p "test that sauces in home page are #{pizza_sauces}"
+	p "test that sizes in home page are #{pizza_size}"
+	p "test that toppings in home page are #{toppings}"
 	redirect '/pizza_creation_page'
 end
 
 get '/pizza_creation_page' do
-	sizes = params[:sizes]
-	meat_toppings = params[:meat_toppings].to_s
-	vegetable_toppings = params[:vegetable_toppings].to_s
-	cheese_toppings = params[:cheese_toppings].to_s
-	sauces = params[:sauces]
-	crusts = params[:crusts]
-	p "test that #{params} in pizza creation page are params"
-	erb :pizza_creation_page
+	pizza_crust = params[:pizza_crust]
+	pizza_sauces = params[:pizza_sauces]
+	pizza_size = params[:pizza_size]
+	toppings2 = params[:toppings].to_s
+	# session[:pizza_crust] = params[:pizza_crust]
+	# session[:pizza_sauces] = params[:pizza_sauces]	
+	# session[:pizza_size] = params[:pizza_size]
+	# session[:pizza_toppings] = params[:pizza_toppings].to_s
+	# session[:address] = params[:address]
+	p "test that crusts in get creation page are #{pizza_crust}"
+	p "test that sauces in get creation page are #{pizza_sauces}"
+	p "test that sizes in get creation page are #{pizza_size}"
+	p "test that toppings in get creation page are #{toppings}"
+	erb :pizza_creation_page, locals:{pizza_crust: pizza_crust, pizza_sauces: pizza_sauces, pizza_size: pizza_size, toppings: toppings}
 end
 
 post '/pizza_creation_page' do
-	redirect '/pizza_app_confirmation_page'
+	pizza_crust = params[:pizza_crust]
+	pizza_sauces = params[:pizza_sauces]
+	pizza_size = params[:pizza_size]
+	toppings = params[:toppings].to_s
+	# session[:pizza_crust] = params[:pizza_crust]
+	# session[:pizza_sauces] = params[:pizza_sauces]	
+	# session[:pizza_size] = params[:pizza_size]
+	# session[:pizza_toppings] = params[:pizza_toppings].to_s
+	# session[:address] = params[:address]
+	p "test that crusts in post creation page are #{pizza_crust}"
+	p "test that sauces in post creation page are #{pizza_sauces}"
+	p "test that sizes in post creation page are #{pizza_size}"
+	p "test that toppings in post creation page are #{toppings}"
+	redirect '/pizza_app_confirmation_page?toppings2=' + toppings + '&pizza_crust=' + pizza_crust + '&pizza_sauces=' + pizza_sauces + '&pizza_size=' + pizza_size
 end
 get '/pizza_app_confirmation_page' do
-	p "params in confirmation page are #{params}"
-	address = params[:address]
-	p "test that #{meat_toppings} is on pizza confirmation page"
-	p "test that #{vegetable_toppings} is on pizza confirmation page"
-	p "test that #{cheese_toppings} is on pizza confirmation page"
-    p "test that #{sauces} is on pizza confirmation page"
-    p "test that #{sizes} is on pizza confirmation page"
-    p "test that #{crusts} is on pizza confirmation page"
-    p "test that #{address} is on pizza confirmation page"
-	erb :pizza_app_confirmation_page, locals:{sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts, address: address}
+	total = pizzaria(params[:pizza_size], params[:pizza_crust], eval(params[:toppings2]), params[:pizza_sauces])
+	p_size = total["pizza_size"]
+	p_crust = total["pizza_crust"]
+	p_sauces = total["pizza_sauces"]
+	p_toppings = total["pizza_toppings"]
+	session[:p_total] = total["total"]
+	erb :pizza_app_confirmation_page, locals:{total: total, p_crust: p_crust, p_sauces: p_sauces, p_size: p_size, p_toppings: p_toppings} 
 end
 post '/pizza_app_confirmation_page' do
-	redirect '/pizza_app_final_page'
+	confirm_size = params[:confirm_size]
+	confirm_crust = params[:confirm_crust]
+	confirm_topping = params[:confirm_topping]
+	confirm_address = params[:confirm_address]
+	confirm_sauces = params[:confirm_sauces]
+	p "test if #{confirm_address} is on confirmation page"
+	confirm_arr = []
+	confirm_arr << confirm_size << confirm_crust << confirm_topping << confirm_address << confirm_sauces
+	confirm_arr.uniq!
+	confirm_arr.each do |confirmation|
+		if confirm_arr.length == 2
+			redirect '/pizza_creation_page'
+		else confirm_arr.length == 1
+			if confirmation == "no"
+				redirect '/pizza_creation_page'
+			else
+				redirect '/pizza_app_final_page?confirm_address=' + confirm_address
+			end
+		end
+	end
 end
 get '/pizza_app_final_page' do
-	p "params in total on final page are #{params}"
-	total = pizzaria(params[:sizes], params[:meat_toppings], params[:vegetable_toppings], params[:cheese_toppings], params[:sauces], params[:crusts])
-	address = params[:address]
-	# pizza_size = total.values[1]
-	# pizza_crust = total.values[2]
-	# pizza_sauce = total.values[3]
-	# pizza_meat_toppings = total.values[4]
-	# pizza_vegetable_toppings = total.values[5]
-	# pizza_cheese_toppings = total.values[6]
-	# pizza_address = total.values[7]
-	# session[:pizza_total] = total.values[8]
-	pizza_total = session[:pizza_total]
-	erb :pizza_app_final_page, locals:{total: total, address: address, sizes: sizes, meat_toppings: meat_toppings, vegetable_toppings: vegetable_toppings, cheese_toppings: cheese_toppings, sauces: sauces, crusts: crusts, pizza_total: pizza_total}
+	p_total = session[:p_total]
+	confirm_address = params[:confirm_address]
+	pizza_size = params[:pizza_size]
+	pizza_crust = params[:pizza_crust]
+	toppings = params[:toppings]
+	pizza_sauces = params[:pizza_sauces]
+	p "test if #{confirm_address} is on final page"
+	erb :pizza_app_final_page, locals:{p_total: p_total, pizza_size: pizza_size, pizza_sauces: pizza_sauces, pizza_crust: pizza_crust, toppings: toppings, confirm_address: confirm_address}
 end
 	post '/pizza_app_final_page' do
 end

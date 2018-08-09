@@ -1,80 +1,100 @@
 require "sinatra"
 
-def meat_toppings()   
- meats = ["pepperoni", "sausage", "ham", "bacon", "chicken", "beef-wellington"]
+def crust_subtotal(pizza_crust)
+    crust_subtotal_arr = []
+    crusts = "#{pizza_crust}"
+    if crusts == "stuffed crust" 
+        crust_subtotal_arr << 0.50
+    else 
+        crust_subtotal_arr << 1.00
+    end
+    crust_subtotal_arr
 end
-def meats_price()
-    [0.25, 0.50, 0.35, 0.80, 1.00, 0.99  ]
+def toppings2(pizza_toppings)
+    empty = []
+    p "check if toppings2 is #{pizza_toppings}"
+    toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pepperjack" => 0.25, "colbyjack" => 0.25, "parmesan" => 0.25, "mozzerella" => 0.25, "extracheese" => 0.50, "bell peppers" => 0.25, "jalapenos" => 0.30, "banana peppers" => 0.25}
+    toppings_subtotal = 0
+    pizza_toppings.each  do |topping|
+        toppings_subtotal = toppings_price.values_at(topping)
+        empty << toppings_subtotal
+        p "toppings at toppings price are #{empty}"
+    end
+    empty
 end
-def cheese_toppings()
-    cheese = ["pepperjack", "colbyjack", "parmesan", "mozzerella", "blue cheese", "nacho"]
+def size_price(pizza_size)
+    size_array = []
+    if pizza_size == "small"
+        size_array << 5.00
+    elsif pizza_size == "medium"
+        size_array << 7.00
+    else 
+        size_array << 9.00
+    end
+    puts size_array
+    size_array
 end
-def cheese_price()
-    cheese = [1.00, 0.75, 1.00, 2.94, 1.23, 2.54]
-end
-def vegetable_toppings()
-    vegetables = ["onion", "bell pepper", "jalapenos", "habenero", "banana peppers", "olives",]
+
+
+def toppings()
+    vegetables = ["pepperoni", "sausage", "ham", "bacon", "pepperjack", "colbyjack", "parmesan", "mozzerella", "bell peppers", "jalapenos", "banana peppers"]
 end
 def crusts()
     crusts = ["stuffed crust", "thin crust", "thick crust"]
 end
-def vegetables_price()
-    vegetables = [0.50, 1.00, 2.00, 3.00, 2.00, 1.00]
-end
 def sauces()
     sauce = ["tomato sauce", "white sauce", "ranch", "mayo"]
 end
-def sauce_price()
-    sauce = [1.00, 0.50, 2.00, 0.15]
+def sauce_price(pizza_sauces)
+    empty = []
+    sauce_price = {"tomato sauce" => 0.25, "white sauce" => 0.50, "ranch" => 0.25, "mayo" => 0.75}
+    sauce_subtotal = 0
+    eval(pizza_sauces).each  do |pizzasauce|
+        sauce_subtotal = sauce_price.values_at(pizzasauce)
+        empty << sauce_subtotal
+    end
+    empty
 end
 def sizes()
-    sizes = ["5 inch", "10 inch", "15 inch"]
+    sizes = ["small", "medium", "large"]
 end 
-def size_price
-    sizes = [10.00, 32.00, 65.25]
-end
 def cls
     system ('cls')
 end
-def pizzaria(sizes, meat_toppings, vegetable_toppings, cheese_toppings, sauces, crusts)
-    cls
-    # puts "to choose what you want,enter the assigned number"
-    # puts "what meat toppings do you want on your pizza?"; print "#{meat_toppings()} : " 
-    p_meats = $stdin.to_i; cls
-    # # puts "what kind of cheese do you want on your pizza?"; print "#{cheese_toppings()} : " 
-    p_cheese = $stdin.to_i; cls
-    # # puts "what kind of veggies do you want on your pizza?"; print "#{vegetable_toppings()} : "
-     p_vegetables = $stdin.to_i; cls
-    # # puts "what kind of sauce do you want on your pizza?"; print "#{sauces()} : " 
-    p_sauce = $stdin.to_i; cls
-    # # puts "what size would you like your pizza to be?"; print "#{sizes()} : " 
-    p_sizes = $stdin.to_i; cls
+def delivery(address)
+    delivery_arr = []
+    charge = 0
+    if address == "radioYes"
+        charge += 5.00
+    else 
+        charge = 0.00
+    end
+    delivery_arr << charge
+end
+def subtotal_array(pizza_toppings, pizza_crust)
+    new_array = []
+    new_array = toppings2(pizza_toppings) << crust_subtotal(pizza_crust)
+    new_array.flatten
+end
+def pizzaria(pizza_size, pizza_crust, pizza_toppings, pizza_sauces)
+    p "test if pizza size is #{pizza_size}"
+    p "test if pizza crust is #{pizza_crust}"
+    p "test if pizza toppings is #{pizza_toppings.class}"
+    p "test if pizza sauces is #{pizza_sauces}"
     final_hash = {}
     total_arr = []
-    #p "subtotal_arr in total_arr is #{subtotal_arr}"
-    p "in final_total total_arr is #{total_arr} class is #{total_arr.class}"
-    total = total_arr.flatten.sum
-    final_hash["sizes"] = sizes
-    final_hash["crusts"] = crusts
-    final_hash["meat_toppings"] = meat_toppings
-    final_hash["vegetable_toppings"] = vegetable_toppings
-    final_hash["cheese_toppings"] = cheese_toppings
-    final_hash["sauces"] = sauces
-    final_hash["crusts"] = crusts
+    taxes = 0.06
+    total_arr = subtotal_array(pizza_toppings, pizza_crust)
+    tax_charge = total_arr * taxes 
+    total_arr << tax_charge
+    my_size = size_price(pizza_size)
+    total_arr << my_size
+    total = total_arr.flatten.sum.to_f
+    final_hash["pizza_size"] = pizza_size
+    final_hash["pizza_crust"] = pizza_crust
+    final_hash["pizza_toppings"] = pizza_toppings
+    final_hash["pizza_sauces"] = pizza_sauces
     final_hash["total"] = total
     final_hash
-    price = 0
-    # puts "do you wnat it delivered y/n?"
-    #     answer = gets.chomp
-    # if answer == "y" ; puts " how many miles away is the foods destination?"; miles = gets.chomp.to_i; cls
-    #      if miles >= 50 
-    #          (price + 5) + (0.40 * miles) 
-    #      else; price + 5
-    #      end
-    #  end
-     total = price * 1.16 
-     # puts "that will be $#{total.round(2)}, after tax."
-    price += meats_price[p_meats - 1] + cheese_price[p_cheese - 1] + vegetables_price[p_vegetables - 1] + sauce_price[p_sauce - 1] + size_price[p_sizes - 1]
-    # puts "enjoy your #{size[p_size - 1]}, #{meats[p_meats - 1]}, #{cheese[p_cheese - 1]}, #{veggies[p_veggies - 1]}, #{sauce[p_sauce - 1]} pizza"; puts "enjoy your side of #{sides}"
 end
 # pizzaria()

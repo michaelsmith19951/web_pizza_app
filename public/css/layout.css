@@ -1,7 +1,7 @@
 body {
 	text-align: center;
 	background-image: url("/images/background.jpg");
-	color: #e0430f; /* Reddish Orange*/
+	color: black; /* Black*/
 	background-size: cover;
 	font-weight: bold;
 }
@@ -26,16 +26,58 @@ body {
 	background-color: #d3cd10;	/* Yellow*/
 	transform: translate(4px);
 	}
-.box_div {
+.box_div_home_page {
 	font-size: 18px;
 	text-align: center;
 	align-items: center;
-	background-color: lightgrey;
-	width: 500px;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 22%;
 	border: 25px solid red;
 	padding: 120px;
 	margin: 25px;
-	height: 1200px;
+	height: 35%;
+}
+.box_div_creation_page {
+	font-size: 18px;
+	text-align: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 25%;
+	border: 25px solid red;
+	padding: 120px;
+	margin: 25px;
+	height: 200%;
+}
+.box_div_confirmation_page {
+	font-size: 18px;
+	text-align: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 25%;
+	border: 25px solid red;
+	padding: 120px;
+	margin: 25px;
+	height: 200%;
+}
+.box_div_final_page {
+	font-size: 18px;
+	text-align: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	width: 25%;
+	border: 25px solid red;
+	padding: 120px;
+	margin: 25px;
+	height: 200%;
+}
+.topping_choices img{
+    height: 35px;
 }
 
+.crust_style img{
+    height: 35px;
+}
 
+.sauce_choices img{
+    height: 35px;
+}

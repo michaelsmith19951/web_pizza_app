@@ -1,5 +1,5 @@
 <center>
-<div class="box_div">
+<div class="box_div_confirmation_page">
 <head>
 	<link rel="stylesheet" type="text/css" href="/css/layout.css">
 	<script src="/js/form.js"></script>
@@ -22,49 +22,79 @@
 
 	<br>
 	<div class="confirm_crust">
-			<%= p_crust.capitalize %><br>
+		<div class = "crust_style">
+			<%= p_crust.capitalize %>
+			<%if p_crust == "stuffed crust"%>
+				<img src=/images/crusts/stuffed_crust.png>
+			<%elsif p_crust == "thin crust"%>
+				<img src=/images/crusts/thin_crust.png>
+			<%elsif p_crust == "thick crust"%>
+				<img src=/images/crusts/thick_crust.png>
+			<%end%><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_crust" value="yes" required>
 			<label for="no">No</label>
 				<input type="radio" name="confirm_crust" value="no">
+		</div>
 	</div>
+	<br>
 
+
+	<div class="confirm_sauces">
+		<div class = "sauce_choices">
+			<%= p_sauces.capitalize %>
+			<%if p_sauces == "tomato sauce"%>
+				<img src=/images/sauces/tomato_sauce.png>
+			<%elsif p_sauces == "white sauce"%>
+				<img src=/images/sauces/white_sauce.png>
+			<%elsif p_sauces == "ranch"%>
+				<img src=/images/sauces/ranch.png>
+			<%elsif p_sauces == "mayo"%>
+				<img src=/images/sauces/mayo.png>
+			<%end%><br>
+			<label for="yes">Yes</label>
+				<input type="radio" name="confirm_sauces" value="yes" required>
+			<label for="no">No</label>
+				<input type="radio" name="confirm_sauces" value="no">
+		</div>
+	</div>
 	<br>
 
 	<div class="confirm_topping">
+		<div class = "topping_choices">
 			<% p_toppings.each do |top| %>
 				<%= top.capitalize %>
 				<% if top == "pepperoni"%>
-				<!-- <img src=/images/toppings/pepperoni.png> -->
+				<img src=/images/toppings/pepperoni.png>
 				<% elsif top == "sausage"%>
-				<!-- <img src=/images/toppings/sausage.png> -->
+				<img src=/images/toppings/sausage.png>
 				<% elsif top == "ham"%>
-				<!-- <img src=/images/toppings/ham.png> -->
+				<img src=/images/toppings/ham.png>
 				<% elsif top == "bacon"%>
-				<!-- <img src=/images/toppings/mybacon.png> -->
+				<img src=/images/toppings/mybacon.png>
 				<% elsif top == "bell peppers"%>
-				<!-- <img src=/images/toppings/green-peppers.png> -->
+				<img src=/images/toppings/bell_pepper.png>
 				<% elsif top == "banana peppers"%>
-				<!-- <img src=/images/toppings/nanpep.png> -->
+				<img src=/images/toppings/nanpep.png>
 				<% elsif top == "jalapenos"%>
-				<!-- <img src=/images/toppings/mush.png> -->
-				<% elsif top == "pepperjack"%>
-				<!-- <img src=/images/toppings/pizza_designer_olives.png> -->
-				<% elsif top == "onions"%>
-				<!-- <img src=/images/toppings/onions.png> -->
-				<% elsif top == "colbyjack"%>
-			<!-- 	<img src=/images/toppings/pinap.png> -->
+				<img src=/images/toppings/jalapenos.png>
+				<% elsif top == "pepper jack"%>
+				<img src=/images/toppings/pepper_jack.png>
+				<% elsif top == "colby jack"%>
+				<img src=/images/toppings/colby_jack.png>
 				<% elsif top == "parmesan"%>
-				<!-- <img src=/images/toppings/cheese.png> -->
+				<img src=/images/toppings/parmesan.png>
 				<% elsif top == "mozzerella"%>
-				<!-- <img src=/images/toppings/cheese.png> -->
-				<% elsif top == "extracheese"%>
+				<img src=/images/toppings/mozzerella.png>
+				<% elsif top == "extra cheese"%>
+				<img src=/images/toppings/cheese.png>
 			<%end%>
 		<%end%><br>
 			<label for="yes">Yes</label>
 				<input type="radio" name="confirm_topping" value="yes" required>
 			<label for="no">No</label>
 				<input type="radio" name="confirm_topping" value="no">
+			</div>
 	</div>
 <h3>Would you like your pizza to be delivered?</h3>
 <div class = "delivery_buttons">

@@ -13,7 +13,7 @@ end
 def toppings2(pizza_toppings)
     empty = []
     p "check if toppings2 is #{pizza_toppings}"
-    toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pepperjack" => 0.25, "colbyjack" => 0.25, "parmesan" => 0.25, "mozzerella" => 0.25, "extracheese" => 0.50, "bell peppers" => 0.25, "jalapenos" => 0.30, "banana peppers" => 0.25}
+    toppings_price = {"pepperoni" => 0.50, "sausage" => 0.50, "ham" => 0.75, "bacon" => 0.75, "pepper jack" => 0.25, "colby jack" => 0.25, "parmesan" => 0.25, "mozzerella" => 0.25, "extra cheese" => 0.50, "bell peppers" => 0.25, "jalapenos" => 0.30, "banana peppers" => 0.25}
     toppings_subtotal = 0
     pizza_toppings.each  do |topping|
         toppings_subtotal = toppings_price.values_at(topping)
@@ -37,7 +37,7 @@ end
 
 
 def toppings()
-    vegetables = ["pepperoni", "sausage", "ham", "bacon", "pepperjack", "colbyjack", "parmesan", "mozzerella", "bell peppers", "jalapenos", "banana peppers"]
+    vegetables = ["pepperoni", "sausage", "ham", "bacon", "pepper jack", "colby jack", "parmesan", "mozzerella", "bell peppers", "jalapenos", "banana peppers"]
 end
 def crusts()
     crusts = ["stuffed crust", "thin crust", "thick crust"]

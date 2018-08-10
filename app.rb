@@ -70,10 +70,15 @@ post '/pizza_app_confirmation_page' do
 	confirm_topping = params[:confirm_topping]
 	confirm_address = params[:confirm_address]
 	confirm_sauces = params[:confirm_sauces]
+	p "test if #{confirm_size} is on confirmation page"
+	p "test if #{confirm_crust} is on confirmation page"
+	p "test if #{confirm_topping} is on confirmation page"
 	p "test if #{confirm_address} is on confirmation page"
+	p "test if #{confirm_sauces} is on confirmation page"
 	confirm_arr = []
-	confirm_arr << confirm_size << confirm_crust << confirm_topping << confirm_address << confirm_sauces
+	confirm_arr << confirm_size << confirm_crust << confirm_topping << confirm_sauces
 	confirm_arr.uniq!
+	p "confirm arr is #{confirm_arr} and its class is #{confirm_arr.class}"
 	confirm_arr.each do |confirmation|
 		if confirm_arr.length == 2
 			redirect '/pizza_creation_page'
@@ -94,6 +99,8 @@ get '/pizza_app_final_page' do
 	toppings = params[:toppings]
 	pizza_sauces = params[:pizza_sauces]
 	p "test if #{confirm_address} is on final page"
+	p "test if #{p_total} is on final page"
+
 	erb :pizza_app_final_page, locals:{p_total: p_total, pizza_size: pizza_size, pizza_sauces: pizza_sauces, pizza_crust: pizza_crust, toppings: toppings, confirm_address: confirm_address}
 end
 	post '/pizza_app_final_page' do

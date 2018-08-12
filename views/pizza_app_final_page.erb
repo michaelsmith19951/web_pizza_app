@@ -13,7 +13,14 @@
 <h3> Your order has been placed. Thank you and enjoy your pizza! </h3>
 <br><br>
 <!-- PLACEHOLDER -->
-<h3>Your total is $<%=p_total%>.</h3>
+<%= "Your total is $"%>
+<% if p_total.to_s[-2] == "." %>
+	<% pp_total = p_total.to_s.insert(-1, "0") %>
+	<%= pp_total %>
+<% else %>
+	<% pp_total = p_total %>
+	<%= pp_total %>
+<% end %>
 <br><br>
 <h3>If you chose to have your pizza delivered, then you will see your address below that you gave us. Please contact us at (304) 123-456 if the address that you gave us is incorrect.</h3>
 <br><br>
